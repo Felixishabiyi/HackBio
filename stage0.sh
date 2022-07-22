@@ -38,9 +38,6 @@ cd EF4/
 grep 'rRNA' Mito.dat
 cp Mito.dat ../../../
 nano Mito.dat
-D   EF4:Mitochondrion   standard; DNA; UNK; 85779 BP.
-XX
-AC   chromosome:EF4:Mitochondrion:1:85779:1;
 mv Mito.dat Mitochondrion.txt
 wc -l lane8_DD_P4_TTAGGC_L008_R1.fastq.gz
 15535 lane8_DD_P4_TTAGGC_L008_R1.fastq.gz
