@@ -40,7 +40,6 @@ cp Mito.dat ../../../
 nano Mito.dat
 mv Mito.dat Mitochondrion.txt
 wc -l lane8_DD_P4_TTAGGC_L008_R1.fastq.gz
-15535 lane8_DD_P4_TTAGGC_L008_R1.fastq.gz
 #length of files in lane8_DD_P4_TTAGGC_L008_R1.fastq.gz saved in the length file
 wc  -l lane8_DD_P4_TTAGGC_L008_R1.fastq.gz > length
 #Total length of all files saved in the totallength file
