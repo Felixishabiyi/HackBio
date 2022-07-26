@@ -111,3 +111,79 @@ ls
 
 #Checking our results in the summary file
 cat summary.txt
+
+#Return back to home
+cd ../../
+
+#Navigating to fastop directory
+cd fastop
+
+#Run Fastqc
+fastqc
+
+#Run fastqc on the second file
+fastqc ../Downloads/SRR1552452.fastq.gz
+
+#Sending results to the output directory
+fastqc ../Downloads/SRR1552452.fastq.gz --outdir=../output
+
+#Navigating to the output directory
+cd ../output
+
+#Printing files in output directory
+ls
+
+#unzip the second file
+unzip SRR1552452_fastqc.zip
+
+#Printing out the files in output
+ls
+
+#Navigating to the unzipped second file
+cd SRR1552452_fastqc
+
+#Printing the files in the unzipped file
+ls
+
+#Check the result in the summary file
+cat summary.txt
+
+#Navigating back to the home directory
+cd ../../
+
+#Navigate to the fastop directory
+
+cd fastop
+
+#Run fastqc
+fastqc
+
+#Run fastqc on the third file
+fastqc ../Downloads/SRR1552453.fastq.gz
+
+#send results from the run to the output directory
+fastqc ../Downloads/SRR1552453.fastq.gz --outdir=../output
+
+#Navigating to the output directory
+cd ../output
+
+#listing the files in output
+ls
+
+#Unziping the third zipped file
+unzip SRR1552453_fastqc.zip
+
+#list the files in output
+ls
+
+#Navigating to the third unzipped file
+cd SRR1552453_fastqc
+
+#List files in the SRR1552453
+ls
+
+#checking the results in the summary
+cat summary.txt
+
+#Naviagting back to the home page
+cd ../../
