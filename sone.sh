@@ -79,7 +79,7 @@ conda activate
 #Install fastqc
 conda install -c bioconda fastqc
 
-Navigated to the fastop directory
+#Navigated to the fastop directory
 cd fastop
 
 #Run fastqc
