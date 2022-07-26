@@ -34,7 +34,7 @@ conda install -c bioconda qualimap
 #Install HTSEQ
 conda install -c bioconda htseq
 
-#Creating a Dwnload directory for the downloads files.
+#Creating a Download directory for the downloads files.
 mkdir Downloads
 
 #Listing the directory in the terminal
@@ -58,6 +58,9 @@ ls
 #To Ascertain the format of the downloaded files
 file SRR1552451.fastq.gz  SRR1552452.fastq.gz  SRR1552453.fastq.gz
 
+#Back to home
+cd ../
+
 #fastop directory was created
 mkdir fastop
 
@@ -65,15 +68,19 @@ mkdir fastop
 mkdir output
 
 #Navigated to the fastop directory
-mkdir fastop
+cd fastop
 
 #Navigating back to home
 cd ../
+
 #Activate conda environment
 conda activate
 
 #Install fastqc
 conda install -c bioconda fastqc
+
+Navigated to the fastop directory
+cd fastop
 
 #Run fastqc
 fastqc
