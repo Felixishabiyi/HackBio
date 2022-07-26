@@ -49,7 +49,7 @@ wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/SRR1552451
 #Downloaded another file from Github
 wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/SRR1552452.fastq.gz
 
-Downloaded the third file from Github
+#Downloaded the third file from Github
 wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/SRR1552453.fastq.gz
 
 #List the files in the Download directory
