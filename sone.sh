@@ -187,3 +187,51 @@ cat summary.txt
 
 #Naviagting back to the home page
 cd ../../
+
+#Navigated to fastop
+cd fastop
+
+#Run samtools
+samtools
+
+#View the header of Baxter
+samtools view -H ../Downloads/Baxter.bam
+
+#To check if it has a PCR flag
+samtools view -f 1024 ../Downloads/Baxter.bam
+
+#To check the first 5 alignment
+samtools view ../Downloads/Baxter.bam | head -n 5
+
+#The number of lines in the Baxter
+samtools view ../Downloads/Baxter.bam | wc -l
+
+#Flag stat of the baxter file saved into a file
+samtools flagstat ../Downloads/Baxter.bam > flagbax.txt
+
+#View the flagstat file
+cat flagbax.txt
+
+#View the header of Chara 
+samtools view -H ../Downloads/Chara.bam
+
+#To send the first segment of Chara to a file
+samtools view -f 64 ../Downloads/Chara.bam > firstsegment.txt
+
+#To check for secondary alignment
+samtools view -f 256 ../Downloads/Chara.bam
+
+#Number of lines in Chara
+samtools view ../Downloads/Chara.bam | wc -l
+
+#Send the flagstat of Chara into a file
+samtools flagstat ../Downloads/Chara.bam >  statChara.txt
+
+#printing of the file
+cat statChara.txt
+
+#Moving the result files to the output directory
+mv firstsegment.txt flagbax.txt statChara.txt ../output
+
+#Back to home
+cd ../
