@@ -188,6 +188,18 @@ cat summary.txt
 #Naviagting back to the home page
 cd ../../
 
+#Navigate to the Download directory
+cd Downloads
+
+#Download the reference genome
+wget wget https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/reference.fasta
+
+#Download Baxter.bam file
+wget https://github.com/josoga2/yt-dataset/raw/main/dataset/alignment_map/Baxter.bam
+
+#Download Chara.bam file
+wget wget https://github.com/josoga2/yt-dataset/raw/main/dataset/alignment_map/Chara.bam
+
 #Navigated to fastop
 cd fastop
 
