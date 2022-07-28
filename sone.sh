@@ -200,6 +200,9 @@ wget https://github.com/josoga2/yt-dataset/raw/main/dataset/alignment_map/Baxter
 #Download Chara.bam file
 wget wget https://github.com/josoga2/yt-dataset/raw/main/dataset/alignment_map/Chara.bam
 
+#Navigated back home
+cd ../
+
 #Navigated to fastop
 cd fastop
 
