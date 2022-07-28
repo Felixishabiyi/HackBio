@@ -235,3 +235,78 @@ mv firstsegment.txt flagbax.txt statChara.txt ../output
 
 #Back to home
 cd ../
+
+#Download directory
+cd Downloads
+
+#Runsamtools
+samtools
+
+#Using samtools to sort the bam files
+samtools sort Baxter.bam -o Baxter_sorted.bam
+
+#Using samtools to sort the bam files
+samtools sort Chara.bam -o Chara_sorted.bam
+
+#Navi to output
+cd ../output
+
+#directory for Baxter
+mkdir BaxterQ
+
+#Navigated to fastop dir
+cd ../fastop
+
+#Run Qualimap bamqc
+qualimap bamqc
+
+#Run qualimap bamqc on the sorted file and save to the output dir
+qualimap bamqc -bam ../Downloads/Baxter_sorted.bam --outdir=../output/BaxterQ
+
+#Navigated to the output dir
+cd ../output/
+
+#Navigated to BaxterQ
+cd BaxterQ
+
+#List the files
+ls
+
+#Navi to the raw file
+cd raw_data_qualimapReport
+
+#Listing the files
+ls
+
+#printing the histogram coverage
+cat coverage_histogram.txt
+
+#Back to home
+cd ../../../
+
+#Navi to the output dir and created CharaQ dir
+cd output && mkdir CharaQ
+
+#Navi to fastop dir
+cd ../fastop
+
+#Ran qualimap bamqc on the sorted file and saved it to the CharaQ dir in output dir
+qualimap bamqc -bam ../Downloads/Chara_sorted.bam --outdir=../output/CharaQ
+
+#Navi to CharaQ
+cd ../output/CharaQ
+
+#Listing the files
+ls
+
+#Navi to the Raw report folder
+cd raw_data_qualimapReport
+
+#listing the files
+ls
+
+#View the genome coverage fraction
+cat genome_fraction_coverage.txt
+
+#back to the home dir
+cd ../../../
