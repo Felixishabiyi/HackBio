@@ -190,31 +190,45 @@ head(FearCondvHomeCage)
 #Running the table function to view the proportion of the sig and not sig in the dataset
 table(FearCondvHomeCage$sig)
 
-#Volcano plots for the Fearconditioned vs Home cage dataset
-FearCondvHomeCage %>%
-  filter(!(sig %in% NA)) %>%
-  ggplot(aes(x=log2FoldChange,y=-log(padj), color=sig))+
-  geom_point()+
-  geom_vline(xintercept = -1.5)+
-  geom_vline(xintercept = 1.5)+
-  geom_hline(yintercept = -log(0.05))
+#plots for HomeCage V Non Shock
+with(HomeCagevNonshock, plot(x = log2FoldChange, y = -log10(padj),
+                             pch = 20, cex = 0.7, col = "darkgreen"))
 
-#Volcano Plots for the Fearconditioned Vs Non shock  
-FearCondvNonshock %>%
-  filter(!(sig %in% NA)) %>%
-  ggplot(aes(x=log2FoldChange,y=-log(padj), color=sig))+
-  geom_point()+
-  geom_vline(xintercept = -1.5)+
-  geom_vline(xintercept = 1.5)+
-  geom_hline(yintercept = -log(0.05))
+with(subset(HomeCagevNonshock, log2FoldChange < -15), points(x = log2FoldChange,
+                                                            y = -log10(padj),
+                                                            pch = 20, cex = 0.7, col = "red"))
+with(subset(HomeCagevNonshock, log2FoldChange > 15), points(x = log2FoldChange,
+                                                             y = -log10(padj),
+                                                             pch = 20, cex = 0.7, col = "red"))
+with(subset(HomeCagevNonshock, log2FoldChange > -25 & -log10(padj) > 30), text(x = log2FoldChange, y = -log10(padj),
+                                                           pch=20, cex = 0.75, col="blue", labels=SYMBOLS))
 
-#Volcano plots for Homacage vs Non shock
-HomeCagevNonshock %>%
-  filter(!(sig %in% NA)) %>%
-  ggplot(aes(x=log2FoldChange,y=-log(padj), color=sig))+
-  geom_point()+
-  geom_vline(xintercept = -1.5)+
-  geom_vline(xintercept = 1.5)+
-  geom_hline(yintercept = -log(0.05))
 
-save.image("DiffExpressResults.RData")
+mtext('HomeCage v NonShock')
+
+
+#Plots for Fear Conditioned Vs Non Shock
+head(FearCondvNonshock)
+with(FearCondvNonshock, plot(x = log2FoldChange, y = -log10(padj),
+                             pch= 20, cex = 0.7, col = 'darkgreen'))
+with(subset(FearCondvNonshock, log2FoldChange > 20), points(x = log2FoldChange, y = -log10(padj),
+                                                            pch = 20, cex = 0.7, col="red"))
+with(subset(FearCondvNonshock, log2FoldChange > 25 & -log10(padj) > 50), text(x = log2FoldChange, y = -log10(padj),
+                                                                              pch = 20, cex = 0.7, col="blue", labels=SYMBOLS))
+
+mtext('Fear Conditioned Vs Non Shock')
+
+
+#Plots for Fear Conditioned Vs HomeCage
+with(FearCondvHomeCage, plot(x = log2FoldChange, y = -log10(padj),
+                             pch = 20, cex = 0.7, col='darkgreen'))
+with(subset(FearCondvHomeCage, log2FoldChange > 20), points(x = log2FoldChange, y = -log10(padj),
+                                                            pch = 20, cex = 0.7, col = 'red'))
+with(subset(FearCondvHomeCage, log2FoldChange > 20 & -log10(padj) > 40), text(x = log2FoldChange, y = -log10(padj),
+                                                                                pch = 20, cex = 0.7, col="blue", labels=SYMBOLS))
+mtext('Fear Conditioned Vs HomeCage')
+
+plots.dir.path <- list.files(tempdir(), pattern="rs-graphics", full.names = TRUE); 
+plots.png.paths <- list.files(plots.dir.path, pattern=".png", full.names = TRUE)
+
+file.copy(from=plots.png.paths, to="C:/Users/Administrator/Downloads/HackBio/images")
